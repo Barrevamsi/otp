@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    div{
+        border: 1px solid black;
+        background-color: aliceblue;
+        padding: 100px;
+    }
+    input[type="button"], button {
+            padding: 5px 20px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+
+<body>
+    <div>
+    <form action="">
+        <input type="" id="val">
+        <br>
+        <br>
+        <input type="button" value="submit" id="sub">
+        <button id="btn">OTP</button>
+    </form>
+</div>
+<br>
+   <script>
+    var a=""
+    var otpDisplayh=null;
+    var btn=document.getElementById("btn")
+    var val=document.getElementById("val")
+    var submit=document.getElementById("sub")
+    btn.addEventListener("click",fn)
+
+    function fn(e){
+        e.preventDefault();
+    n=4
+    a=""
+    for(i=0;i<n;i++){
+    a=a+Math.floor(Math.random()*10)
+    }
+    console.log(a)
+    if(!otpDisplayh){
+        otpDisplayh=document.createElement("h2")
+        document.body.appendChild(otpDisplayh) 
+    }
+    otpDisplayh.innerText="your otp is   :" +a  
+    } 
+
+    submit.addEventListener("click",fn1)
+    function fn1(){
+        if(val.value==""){
+            alert("plese enter the otp")
+        }
+        else{
+            
+            if(val.value==a){
+                alert("login sucess")
+            }
+            else{
+                alert("enter correct otp")
+            }
+    }
+    }
+    
+    
+   </script> 
+</body>
+</html>
